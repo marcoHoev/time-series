@@ -4,7 +4,7 @@
 
 run 
 
-    conda env create --file ts-env.yaml
+    conda env create --file ts-env.yml
 
 in this folder.
 

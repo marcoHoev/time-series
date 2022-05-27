@@ -7,14 +7,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-data = pd.read_csv('data/QualidadeARO3.xlsx')
+data = pd.read_excel('data/QualidadeARO3.xlsx')
 data.head()
 
 plt.figure(figsize=[15, 7.5]); # Set dimensions for figure
-plt.plot(data['date'], data['data'])
-plt.title('Quarterly EPS for Johnson & Johnson')
+plt.plot(data)
+plt.title('Blaaa')
 plt.ylabel('EPS per share ($)')
 plt.xlabel('Date')
 plt.xticks(rotation=90)
 plt.grid(True)
+plt.legend()
+plt.show()
 plt.show()
