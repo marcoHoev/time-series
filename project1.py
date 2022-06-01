@@ -12,11 +12,13 @@ data.head()
 
 plt.figure(figsize=[15, 7.5]); # Set dimensions for figure
 plt.plot(data)
-plt.title('Blaaa')
-plt.ylabel('EPS per share ($)')
-plt.xlabel('Date')
+plt.title('time series of hourly-ground-levels of O3 values, in micrograms per cubic meter')
+plt.ylabel('μg/m^3')
+plt.xlabel('h')
 plt.xticks(rotation=90)
 plt.grid(True)
 plt.legend()
 plt.show()
-plt.show()
+#plt.show()
+
+print(data.head())
