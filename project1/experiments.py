@@ -56,8 +56,9 @@ tmp = os.getcwd()
 
 for p,q,P,Q in itertools.product(p_list, q_list, P_list, Q_list):
     #print(f'{p},{q},{P},{Q}')
-    file = os.path.join(tmp, f'models/proj1_1/{p}_{q}_{P}_{Q}.pkl')
-    if not os.path.isfile(file):
+    file0 = os.path.join(tmp, f'models/proj1_1/{p}_{q}_{P}_{Q}.pkl')
+    file1 = os.path.join(tmp, f'models/proj1/{p}_{q}_{P}_{Q}.pkl')
+    if not os.path.isfile(file0) and not os.path.isfile(file1):
         try:
             model_fit = SARIMAX(endog, order=(p,0,q), seasonal_order=(P,0,Q, 24)).fit(disp=False) 
             model_dict[f'{p},{q},{P},{Q}'] = (model_fit.bic, model_fit.aic, model_fit.aicc)
@@ -71,4 +72,4 @@ for p,q,P,Q in itertools.product(p_list, q_list, P_list, Q_list):
             logger.info('Error while trying to save dict. Exiting')
             break
     else:
-        logger.info(f'Already exists: {file}')
+        logger.info(f'Already exists: {file0}')
