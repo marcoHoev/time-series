@@ -26,14 +26,27 @@ ordered_list = sorted(tuple_list)
 for i in range(9):
     print(ordered_list[i])
 
-# get latex code
+# order list by pqPQ:
+ordered_by_name = []
 for model in ordered_list:
-    if '3' in model[1]:
-        continue
     p0,q0,p1,q1 = model[1].split(',')
+    ordered_by_name.append(((p0,q0,p1,q1), model[0]))
 
-    print(f'{p0} & {q0} & {p1} & {q1} & {model[0][0]} & {model[0][1]} \\\\')
+ordered_by_name = sorted(ordered_by_name)
+print(ordered_by_name[0])
 
+# get latex code
+# for model in ordered_list:
+#     if '3' in model[1]:
+#         continue
+#     p0,q0,p1,q1 = model[1].split(',')
+#     print(f'{p0} & {q0} & {p1} & {q1} & {model[0][0]} & {model[0][1]} \\\\')
 
+for model in ordered_by_name:
+    if '3' in model[0]:
+        continue
+    p0,q0,p1,q1 = model[0]
+    #print(f'{p0} & {q0} & {p1} & {q1} & {model[1][0]:.2f} & {model[1][1]:.2f} \\\\')
+    print(f'{p0} & {q0} & {p1} & {q1} & {model[1][0]:.2f}  \\\\')
 #best_key = min(complete_dict, key=lambda key: complete_dict[key][0])
 #print(complete_dict[best_key])
