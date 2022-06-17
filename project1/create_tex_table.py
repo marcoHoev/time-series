@@ -3,7 +3,7 @@ import pickle
 import itertools
 
 tmp = os.getcwd()
-os.chdir('..')
+#os.chdir('..')
 tmp = os.getcwd()
 
 # only necessary if experiments were killed inbetween. Currently only needed for Entrecampos
@@ -49,7 +49,7 @@ for p,q,P,Q in itertools.product(p_list, q_list, P_list, Q_list):
     bic_list = []
     for data in dicts:
         if key in data:
-            bic = data[key]
+            bic = data[key][0]
         else:
             bic = 0.0
         bic_list.append(bic)
