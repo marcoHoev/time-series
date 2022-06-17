@@ -54,7 +54,7 @@ for city in data.columns:
             except Exception as e:
                 logger.info(f'Some error occured while fitting the model. \n {e}')
             try:
-                with open(f'models/proj1/{city}/{p}_{q}_{P}_{Q}.pkl', 'ab') as f:
+                with open(file, 'ab') as f:
                     pickle.dump(model_dict, f, pickle.HIGHEST_PROTOCOL)
             except:
                 logger.info('Error while trying to save dict. Exiting')
