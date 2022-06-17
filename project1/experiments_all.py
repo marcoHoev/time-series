@@ -34,10 +34,10 @@ data = data.drop(columns='Ihavo')
 rng = pd.date_range('1/1/2020 00:00', periods=8784, freq='1H')
 data.index = rng
 
-p_list = list(range(0,4))
-q_list = list(range(0,4))
-P_list = list(range(0,4))
-Q_list = list(range(0,4))
+p_list = list(range(0,3))
+q_list = list(range(0,3))
+P_list = list(range(0,3))
+Q_list = list(range(0,3))
 
 tmp = os.getcwd()
 
