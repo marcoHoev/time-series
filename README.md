@@ -1,5 +1,9 @@
 # time-series
 
+## Todo:
+
+Short description of the project and how to use the code.
+
 ## Setup
 
 run 
@@ -7,11 +11,6 @@ run
     conda env create --file ts-env.yml
 
 in this folder.
-
-
-## Blabla
-
-Blabla
 
 ## Note
 
